@@ -24,6 +24,9 @@ class actEmailverifNotifandPrompt
         $request->user()->sendEmailVerificationNotification();
     }
 
+    /**
+     * Display the email verification prompt.
+     */
     public function handleEmailverifPrompter(Request $request): RedirectResponse|View
     {
         return $request->user()->hasVerifiedEmail()

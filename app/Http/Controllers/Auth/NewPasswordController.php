@@ -25,6 +25,6 @@ class NewPasswordController extends Controller
      */
     public function store($req, actPassManager $act)
     {
-        $passReq = $act->handleNewPassword($req);
+        $act->handleNewPassword($req);
     }
 }

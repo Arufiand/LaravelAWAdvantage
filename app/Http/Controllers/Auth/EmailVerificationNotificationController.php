@@ -11,7 +11,7 @@ class EmailVerificationNotificationController extends Controller
    
     public function store($req, actEmailverifNotifandPrompt $act): RedirectResponse
     {
-        $SendEmailNotif = $act->handleSendEmailNotif($req);
+        $act->handleSendEmailNotif($req);
         return back()->with('status', 'verification-link-sent');
     }
 }

@@ -22,7 +22,7 @@ class ConfirmablePasswordController extends Controller
 
     public function store($req, actPassManager $act): RedirectResponse
     {
-        $confirmPass = $act->handleConfirmPass($req);
+        $act->handleConfirmPass($req);
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 }

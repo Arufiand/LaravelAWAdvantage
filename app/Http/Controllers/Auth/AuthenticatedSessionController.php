@@ -21,13 +21,13 @@ class AuthenticatedSessionController extends Controller
 
     public function store($request, actAuthenticatedSession $act): RedirectResponse
     {
-        $loginReq = $act->handleLoginRequest($request);
+        $act->handleLoginRequest($request);
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function destroy($request, actAuthenticatedSession $act): RedirectResponse
     {
-        $logoutReq = $act->handleLogoutRequest($request);
+        $act->handleLogoutRequest($request);
         return redirect('/');
     }
 }
