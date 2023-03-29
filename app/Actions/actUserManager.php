@@ -16,7 +16,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 
 
-class actRegisUserController
+class actUserManager
 {
     use AsAction;
 
