@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Actions\actConfirmPass;
+use App\Actions\actPassManager;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -20,7 +20,7 @@ class ConfirmablePasswordController extends Controller
     }
 
 
-    public function store($req, actConfirmPass $act): RedirectResponse
+    public function store($req, actPassManager $act): RedirectResponse
     {
         $confirmPass = $act->handleConfirmPass($req);
         return redirect()->intended(RouteServiceProvider::HOME);
