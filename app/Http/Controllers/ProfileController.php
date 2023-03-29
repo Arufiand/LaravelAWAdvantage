@@ -23,7 +23,7 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update($request, actProfileController $act): RedirectResponse
+    public function update( Request $request, actProfileController $act): RedirectResponse
     {
         $act->handleUpdateUser($request);
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
@@ -32,7 +32,7 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy($request, actProfileController $act): RedirectResponse
+    public function destroy( Request $request, actProfileController $act): RedirectResponse
     {
         $act->handleDeleteUser($request);
         return Redirect::to('/');

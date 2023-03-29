@@ -19,13 +19,13 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
-    public function store($request, actAuthenticatedSession $act): RedirectResponse
+    public function store(Request $request, actAuthenticatedSession $act): RedirectResponse
     {
         $act->handleLoginRequest($request);
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
-    public function destroy($request, actAuthenticatedSession $act): RedirectResponse
+    public function destroy(Request $request, actAuthenticatedSession $act): RedirectResponse
     {
         $act->handleLogoutRequest($request);
         return redirect('/');

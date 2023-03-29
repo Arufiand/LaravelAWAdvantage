@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Actions\actPassManager;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PasswordResetLinkController extends Controller
@@ -21,7 +22,7 @@ class PasswordResetLinkController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store($request, actPassManager $act){
+    public function store(Request $request, actPassManager $act){
         $act->handleLinkPassReq($request);
     }
 }

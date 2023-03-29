@@ -23,7 +23,7 @@ class NewPasswordController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store($req, actPassManager $act)
+    public function store(Request $req, actPassManager $act)
     {
         $act->handleNewPassword($req);
     }

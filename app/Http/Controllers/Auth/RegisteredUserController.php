@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Actions\actRegisUserController;
+use App\Actions\actUserManager;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -23,9 +29,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store($req, actRegisUserController $act): RedirectResponse
+    public function store(Request $request, actUserManager $act): RedirectResponse
     {
-        $act->handleRegisUser($req); 
-        return redirect(RouteServiceProvider::HOME);
+      $act->handleRegisUser($request);
+      return redirect(RouteServiceProvider::HOME);
     }
 }
